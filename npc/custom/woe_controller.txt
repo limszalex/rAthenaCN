@@ -1,9 +1,18 @@
-//===== rAthenaCN �������� ===================================
-//= ����������ת�غ�ʹ�ñ������ű�������ʹ�á����������
-//= �˽ű��еĺ����ɹ�����ô�������Ľű��м��ϲ�����������
-//= �������������Ը�л��
-//= ����������ű��и��õķ��뽨�飬���ִ˽ű��ĺ�������
-//= ��ǰ�� http://rathena.cn �ϱ������ֵ����⣬лл��
+//===== QCRO ===============================================
+//= By limszalex www.github.com/limszalex
+//= Forked from rAthenaCN
+//= Include English map naming from original rAthena
+//
+//== v1 == 22102016
+//= Tranlated into chinese
+//===========================================================
+
+//===== rAthenaCN 汉化声明 ===================================
+//= 您可以随意转载和使用本汉化脚本。若您使用、借鉴或复制了
+//= 此脚本中的汉化成果，那么请在您的脚本中加上并保留这七行
+//= 汉化声明，由衷感谢。
+//= 若您对这个脚本有更好的翻译建议，或发现此脚本的汉化错误，
+//= 请前往 http://rathena.cn 上报您发现的问题，谢谢。
 //============================================================
 
 //===== rAthena Script =======================================
@@ -27,7 +36,7 @@
 
 // Information NPC
 //============================================================
-prontera,149,193,4	script	WOE Information	835,{
+prontera,153,190,4	script	公会之战 资讯	835,{
 	doevent "WOE_CONTROL::OnMenu";
 	end;
 OnAgitStart:
@@ -36,6 +45,15 @@ OnAgitStart:
 		sleep 425;
 	}
 	end;
+}
+malangdo,161,139,1	script	公会之战 资讯#mal	835,{
+	doevent "WOE_CONTROL::OnMenu";
+	end;
+OnAgitStart:
+	while(agitcheck()) {
+		specialeffect EF_BEGINSPELL6;
+		sleep 425;
+	}
 }
 
 // Script Core
@@ -77,7 +95,7 @@ OnInit:
 	// Rewards per castle.
 	// -- when given directly: <itemID>,<amount>{,<itemID>,<amount>,...}
 	// -- via mail (option 2): <itemID>,<amount>,<Zeny>
-	setarray .Reward[0],14001,1;
+	setarray .Reward[0],11503,50;
 
 // -----------------------------------------------------------
 //  Constants (leave this section alone).
@@ -91,8 +109,8 @@ OnInit:
 		"arug_cas01","arug_cas02","arug_cas03","arug_cas04","arug_cas05",
 		"schg_cas01","schg_cas02","schg_cas03","schg_cas04","schg_cas05";
 	setarray .EndLabel$[0],"ar01","ar02","ar03","ar04","ar05","sc01","sc02","sc03","sc04","sc05";
-	setarray .Days$[0],"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday";
-	setarray .Regions$[0],"Prontera","Payon","Geffen","Aldebaran","Arunafeltz","Schwaltzvalt";
+	setarray .Days$[0],"Sunday【天】","Monday【一】","Tuesday【二】","Wednesday【三】","Thursday【四】","Friday【五】","Saturday【六】";
+	setarray .Regions$[0],"普隆德拉-Prontera","斐扬-Payon","吉芬-Geffen","艾尔帕兰-Aldebaran"," 发菲依雅工会-Arunafeltz","尼它堆工会-Schwaltzvalt";
 	setarray .Map$[0],"prt_gld","pay_gld","gef_fild13","alde_gld","aru_gld","sch_gld";
 	setarray .MapX[0],134,240,153,111,208,121,295,317,140,204,214,308,143,193,305,48, 95,142,239,264,158,83, 68,299,292,293,288, 97,137, 71;
 	setarray .MapY[0], 65,128,137,240,240,233,116,293,160,266, 75,240,240,278, 87,83,249, 85,242, 90,272,47,155,345,107,100,252,196, 90,315;
@@ -114,7 +132,7 @@ OnMinute00:
 		for(set .@i,0; .@i<.Size; set .@i,.@i+4)
 			if (gettime(4) == $WOE_CONTROL[.@i] && gettime(3) == $WOE_CONTROL[.@i+2]) {
 			OnWOEEnd:
-				announce "The War Of Emperium is over!",bc_all|bc_woe;
+				announce "公会之战正式结束！",bc_all|bc_woe;
 				AgitEnd; AgitEnd2;
 				sleep 1000;
 				for(set .@j,0; .@j<30; set .@j,.@j+1) {
@@ -159,8 +177,8 @@ OnMinute00:
 
 function Disp_Owner {
 	set .@o, getcastledata(getarg(0),1);
-	if (.@o) announce "The ["+getcastlename(getarg(0))+"] castle "+((getarg(1))?"has been conquered":"is currently held")+" by the ["+getguildname(.@o)+"] guild.",bc_all|bc_woe;
-	else announce "The ["+getcastlename(getarg(0))+"] castle is currently unoccupied.",bc_all|bc_woe;
+	if (.@o) announce "秘密基地 ["+getcastlename(getarg(0))+"] "+((getarg(1))?"已被":"正在被")+" ["+getguildname(.@o)+"] 公会占领着.",bc_all|bc_woe;
+	else announce "秘密基地 ["+getcastlename(getarg(0))+"] 目前没有被任何公会占领",bc_all|bc_woe;
 	return;
 }
 function Add_Zero {
@@ -185,7 +203,7 @@ OnReward:
 				if (.Options&2) {
 					query_sql("INSERT INTO `mail` (send_name,dest_id,title,message,nameid,amount,identify,zeny,time) VALUES ("+
 					          "'no-reply',"+.@cid[.@j]+",'** Siege Reward: "+getcastlename(.Castles$[.@i])+" **',"+
-					          "'Brave one,% % Congratulations!% Your guild has successfully occupied% territory in the War of Emperium on% "+.@str$+".% % % % % [ Your reward is attached. ]',"+
+					          "'勇者,% % 恭喜!% 您的公会成功占领% 秘密基地 % "+.@str$+".% % % % % [ Your reward is attached. ]',"+
 					          .Reward[0]+","+.Reward[1]+",0,"+.Reward[2]+",UNIX_TIMESTAMP(NOW()))");
 					if (!getd(".@str_"+.@cid[.@j]) && isloggedin(.@aid[.@j],.@cid[.@j])) {
 						setd ".@str_"+.@cid[.@j],1;
@@ -214,7 +232,7 @@ OnPCLoadMapEvent:
 
 OnMenu:
 while(1) {
-	mes "[WOE Information]";
+	mes "[公会之战 资讯]";
 	if (agitcheck() || agitcheck2()) {
 		if (.Active[0]) {
 			for(set .@i,0; .@i<.Size; set .@i,.@i+4)
@@ -222,12 +240,12 @@ while(1) {
 					set .@i, $WOE_CONTROL[.@i+2];
 					break;
 				}
-			mes "The War of Emperium is ^0055FFactive^000000 until ^FF0000"+Add_Zero(.@i)+"^000000 in the following regions:";
+			mes "公会之战已 ^0055FF开始^000000 至 ^FF0000"+Add_Zero(.@i)+"^000000 在这些城堡:";
 			mes " ";
 			for(set .@i,0; .@i<6; set .@i,.@i+1)
 				if (.Active[1]&(1<<(.@i+1))) mes " > ^777777"+.Regions$[.@i]+"^000000";
 		} else
-			mes "The War of Emperium is ^0055FFactive^000000.";
+			mes "公会之战已 ^0055FF开始^000000.";
 	} else {
 		for(set .@i,0; .@i<.Size; set .@i,.@i+4)
 			if ((gettime(4) == $WOE_CONTROL[.@i] && gettime(3) <= $WOE_CONTROL[.@i+1]) || gettime(4) < $WOE_CONTROL[.@i]) {
@@ -236,15 +254,16 @@ while(1) {
 			}
 		if (!getarraysize(.@time))
 			setarray .@time[0],$WOE_CONTROL[0],$WOE_CONTROL[1];
-		mes "The War of Emperium is ^777777inactive^000000.";
+		mes "公会之战已 ^777777结束^000000.";
 		if (.Size) {
 			mes " ";
-			mes "The next session will begin";
-			mes "on ^0055FF"+.Days$[.@time[0]]+"^000000 at "+Add_Zero(.@time[1])+"^000000.";
+			mes "下一个回合的公会之战在：";
+			mes "每逢星期: ^0055FF"+.Days$[.@time[0]]+"^000000";
+			mes "时间: ^0055FF"+Add_Zero(.@time[1])+"^000000.";
 		}
 	}
 	next;
-	switch(select(""+((.CastleWarp || .Active[1])?" ~ Warp to castles...":"")+": ~ Check schedule...: ~ View castle owners...:"+((getgmlevel()<.GMAccess || !getgmlevel())?"":" ~ Manage sessions...")+": ~ ^777777Cancel^000000")) {
+	switch(select(""+((.CastleWarp || .Active[1])?"城堡传送...":"")+":公会之战时间表...:公会城堡...:"+((getgmlevel()<.GMAccess || !getgmlevel())?"":"Manage sessions(GM)...")+":^777777弹出^000000")) {
 	case 1:
 		if (.CastleWarp) set .@clr$,"^0055FF";
 		set .@menu$,"";
@@ -275,17 +294,17 @@ while(1) {
 			}
 			freeloop(0);
 		} else
-			mes "No times are configured.";
+			mes "暂时无公会之战";
 		next;
 		break;
 	case 3:
-		mes "[Castle Ownership]";
+		mes "[公会城堡]";
 		for(set .@i,0; .@i<6; set .@i,.@i+1) {
 			set .@k, .@i*5;
 			mes "> ^FF0000"+.Regions$[.@i]+"^000000";
 			for(set .@j,.@k; .@j<(.@k+5); set .@j,.@j+1) { 
 				set .@t, getcastledata(.Castles$[.@j],1);
-				mes "  ~ "+getcastlename(.Castles$[.@j])+": "+((.@t)?"^0055FF"+getguildname(.@t):"^777777unoccupied")+"^000000";
+				mes "  ~ "+getcastlename(.Castles$[.@j])+": "+((.@t)?"^0055FF"+getguildname(.@t):"^777777无公会占领")+"^000000";
 			}
 			if (.@i < 5) mes " ";
 		}
