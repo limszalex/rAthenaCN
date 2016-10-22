@@ -4,16 +4,16 @@
 //= Include English map naming from original rAthena
 //
 //== v1 == 22102016
-//= Renamed NPC to ²¨ÀûÖÎÓúÊ¦_Healer
+//= Renamed NPC to æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer
 //= New location for certain city
 //============================================================
 
-//===== rAthenaCN ºº»¯ÉùÃ÷ ===================================
-//= Äú¿ÉÒÔËæÒâ×ªÔØºÍÊ¹ÓÃ±¾ºº»¯½Å±¾¡£ÈôÄúÊ¹ÓÃ¡¢½è¼ø»ò¸´ÖÆÁË
-//= ´Ë½Å±¾ÖĞµÄºº»¯³É¹û£¬ÄÇÃ´ÇëÔÚÄúµÄ½Å±¾ÖĞ¼ÓÉÏ²¢±£ÁôÕâÆßĞĞ
-//= ºº»¯ÉùÃ÷£¬ÓÉÖÔ¸ĞĞ»¡£
-//= ÈôÄú¶ÔÕâ¸ö½Å±¾ÓĞ¸üºÃµÄ·­Òë½¨Òé£¬»ò·¢ÏÖ´Ë½Å±¾µÄºº»¯´íÎó£¬
-//= ÇëÇ°Íù http://rathena.cn ÉÏ±¨Äú·¢ÏÖµÄÎÊÌâ£¬Ğ»Ğ»¡£
+//===== rAthenaCN æ±‰åŒ–å£°æ˜ ===================================
+//= æ‚¨å¯ä»¥éšæ„è½¬è½½å’Œä½¿ç”¨æœ¬æ±‰åŒ–è„šæœ¬ã€‚è‹¥æ‚¨ä½¿ç”¨ã€å€Ÿé‰´æˆ–å¤åˆ¶äº†
+//= æ­¤è„šæœ¬ä¸­çš„æ±‰åŒ–æˆæœï¼Œé‚£ä¹ˆè¯·åœ¨æ‚¨çš„è„šæœ¬ä¸­åŠ ä¸Šå¹¶ä¿ç•™è¿™ä¸ƒè¡Œ
+//= æ±‰åŒ–å£°æ˜ï¼Œç”±è¡·æ„Ÿè°¢ã€‚
+//= è‹¥æ‚¨å¯¹è¿™ä¸ªè„šæœ¬æœ‰æ›´å¥½çš„ç¿»è¯‘å»ºè®®ï¼Œæˆ–å‘ç°æ­¤è„šæœ¬çš„æ±‰åŒ–é”™è¯¯ï¼Œ
+//= è¯·å‰å¾€ http://rathena.cn ä¸ŠæŠ¥æ‚¨å‘ç°çš„é—®é¢˜ï¼Œè°¢è°¢ã€‚
 //============================================================
 
 //===== rAthena Script =======================================
@@ -68,48 +68,48 @@
 //[2][0][6]
 //[3][4][5]
 //============================================================
-alberta,119,65,3	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#alb	909
-alberta,185,144,3	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#alb2	909
-aldebaran,135,118,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#alde	909
-amatsu,102,143,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#ama	909
-amatsu,192,81,8	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#ama2	909
-ayothaya,207,169,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#ayo	909
-ayothaya,156,111,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#ayo2	909
-comodo,184,158,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#com	909
-einbech,57,36,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#einbe	909
-einbech,75,102,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#einbe2	909
-einbroch,57,202,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#einbr	909
-geffen,123,69,8	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#gef	909
-gonryun,156,122,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#gon	909
-hugel,89,150,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#hug	909
-izlude,123,114,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#izl	909	//Pre-RE: (125,118)
-jawaii,250,139,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#jaw	909
-lighthalzen,152,100,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#lhz	909
-louyang,226,103,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#lou	909
-manuk,272,144,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#man	909
-mid_camp,203,289,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#mid	909
-moc_ruins,72,164,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#moc	909
-morocc,153,97,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#mor	909
-moscovia,220,191,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#mos	909
-niflheim,212,182,5	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#nif	909
-payon,179,106,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#pay	909
-payon,165,229,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#pay2	909
-prontera,162,193,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#prt	909
-rachel,125,116,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#rac	909
-splendide,201,153,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#spl	909
-thor_camp,249,74,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#thor	909
-umbala,105,148,3	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#umb	909
-umbala,90,159,3	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#umb2	909
-veins,217,121,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#ve	909
-xmas,143,136,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#xmas	909
-yuno,164,45,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#yuno	909
+alberta,119,65,3	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#alb	909
+alberta,185,144,3	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#alb2	909
+aldebaran,135,118,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#alde	909
+amatsu,102,143,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#ama	909
+amatsu,192,81,8	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#ama2	909
+ayothaya,207,169,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#ayo	909
+ayothaya,156,111,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#ayo2	909
+comodo,184,158,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#com	909
+einbech,57,36,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#einbe	909
+einbech,75,102,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#einbe2	909
+einbroch,57,202,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#einbr	909
+geffen,123,69,8	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#gef	909
+gonryun,156,122,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#gon	909
+hugel,89,150,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#hug	909
+izlude,123,114,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#izl	909	//Pre-RE: (125,118)
+jawaii,250,139,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#jaw	909
+lighthalzen,152,100,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#lhz	909
+louyang,226,103,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#lou	909
+manuk,272,144,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#man	909
+mid_camp,203,289,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#mid	909
+moc_ruins,72,164,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#moc	909
+morocc,153,97,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#mor	909
+moscovia,220,191,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#mos	909
+niflheim,212,182,5	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#nif	909
+payon,179,106,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#pay	909
+payon,165,229,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#pay2	909
+prontera,162,193,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#prt	909
+rachel,125,116,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#rac	909
+splendide,201,153,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#spl	909
+thor_camp,249,74,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#thor	909
+umbala,105,148,3	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#umb	909
+umbala,90,159,3	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#umb2	909
+veins,217,121,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#ve	909
+xmas,143,136,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#xmas	909
+yuno,164,45,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#yuno	909
 
 // Duplicates (Renewal)
 //============================================================
-brasilis,194,221,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#bra	909
-dewata,195,187,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#dew	909
-dicastes01,201,194,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#dic	909
-ecl_in01,45,60,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#ecl	909
-malangdo,132,114,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#mal	909
-malaya,227,204,6	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#ma	909
-mora,55,152,4	duplicate(Healer)	²¨ÀûÖÎÓúÊ¦_Healer#mora	909
+brasilis,194,221,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#bra	909
+dewata,195,187,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#dew	909
+dicastes01,201,194,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#dic	909
+ecl_in01,45,60,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#ecl	909
+malangdo,132,114,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#mal	909
+malaya,227,204,6	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#ma	909
+mora,55,152,4	duplicate(Healer)	æ³¢åˆ©æ²»æ„ˆå¸ˆ_Healer#mora	909

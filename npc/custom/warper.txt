@@ -9,12 +9,12 @@
 //= Remoevd some Pre-Re limitation
 //============================================================
 
-//===== rAthenaCN ºº»¯ÉùÃ÷ ===================================
-//= Äú¿ÉÒÔËæÒâ×ªÔØºÍÊ¹ÓÃ±¾ºº»¯½Å±¾¡£ÈôÄúÊ¹ÓÃ¡¢½è¼ø»ò¸´ÖÆÁË
-//= ´Ë½Å±¾ÖĞµÄºº»¯³É¹û£¬ÄÇÃ´ÇëÔÚÄúµÄ½Å±¾ÖĞ¼ÓÉÏ²¢±£ÁôÕâÆßĞĞ
-//= ºº»¯ÉùÃ÷£¬ÓÉÖÔ¸ĞĞ»¡£
-//= ÈôÄú¶ÔÕâ¸ö½Å±¾ÓĞ¸üºÃµÄ·­Òë½¨Òé£¬»ò·¢ÏÖ´Ë½Å±¾µÄºº»¯´íÎó£¬
-//= ÇëÇ°Íù http://rathena.cn ÉÏ±¨Äú·¢ÏÖµÄÎÊÌâ£¬Ğ»Ğ»¡£
+//===== rAthenaCN æ±‰åŒ–å£°æ˜ ===================================
+//= æ‚¨å¯ä»¥éšæ„è½¬è½½å’Œä½¿ç”¨æœ¬æ±‰åŒ–è„šæœ¬ã€‚è‹¥æ‚¨ä½¿ç”¨ã€å€Ÿé‰´æˆ–å¤åˆ¶äº†
+//= æ­¤è„šæœ¬ä¸­çš„æ±‰åŒ–æˆæœï¼Œé‚£ä¹ˆè¯·åœ¨æ‚¨çš„è„šæœ¬ä¸­åŠ ä¸Šå¹¶ä¿ç•™è¿™ä¸ƒè¡Œ
+//= æ±‰åŒ–å£°æ˜ï¼Œç”±è¡·æ„Ÿè°¢ã€‚
+//= è‹¥æ‚¨å¯¹è¿™ä¸ªè„šæœ¬æœ‰æ›´å¥½çš„ç¿»è¯‘å»ºè®®ï¼Œæˆ–å‘ç°æ­¤è„šæœ¬çš„æ±‰åŒ–é”™è¯¯ï¼Œ
+//= è¯·å‰å¾€ http://rathena.cn ä¸ŠæŠ¥æ‚¨å‘ç°çš„é—®é¢˜ï¼Œè°¢è°¢ã€‚
 //============================================================
 
 //===== rAthena Script ======================================= 
@@ -45,39 +45,39 @@ function Go; function Disp; function Pick; function Restrict;
 // --------------------------------------------------
 //	Main Menu:
 // --------------------------------------------------
-mes "[ÏÉÅ®´«ËÍ·şÎñ]";
-mes "Çë¸æËßÎÒÄúµÄÄ¿µÄµØ¡£";
+mes "[ä»™å¥³ä¼ é€æœåŠ¡]";
+mes "è¯·å‘Šè¯‰æˆ‘æ‚¨çš„ç›®çš„åœ°ã€‚";
 mes "";
 mes "[Fairy Tele Services]";
 mes "Warp to?";
 
 if(getgmlevel()>30){
-	menu	"- Ç°´«ËÍµã (Last Warp) ^777777["+lastwarp$+"]^000000",-,
+	menu	"- å‰ä¼ é€ç‚¹ (Last Warp) ^777777["+lastwarp$+"]^000000",-,
 			"- ^ff0000GM Cat House^000000",wgmwarp,
-			"- ³ÇÕò (Towns/Cities)",Towns,
-			"- Ò°Íâ (Fields)",Fields,
-			"- ¶´Ñ¨ (Dungeons)",Dungeons,
-			"- ¹«»á³Ç±¤ (Guild Castles) ",Castles,
-			"- µØÏÂ¹¤»áÃÜÑ¨ (Guild Dungeons)",Guild_Dungeons,
-			"- ÌØÊâµØÇø £¨Special Area)",Special;
+			"- åŸé•‡ (Towns/Cities)",Towns,
+			"- é‡å¤– (Fields)",Fields,
+			"- æ´ç©´ (Dungeons)",Dungeons,
+			"- å…¬ä¼šåŸå ¡ (Guild Castles) ",Castles,
+			"- åœ°ä¸‹å·¥ä¼šå¯†ç©´ (Guild Dungeons)",Guild_Dungeons,
+			"- ç‰¹æ®Šåœ°åŒº ï¼ˆSpecial Area)",Special;
 
 		if (lastwarp$ == "")
-			message strcharinfo(0),"Äú»¹Ã»±»´«ËÍ¡£ - You haven't warped anywhere yet.";
+			message strcharinfo(0),"æ‚¨è¿˜æ²¡è¢«ä¼ é€ã€‚ - You haven't warped anywhere yet.";
 		else
 			warp lastwarp$,lastwarpx,lastwarpy;
 		end;
 }
 else{
-	menu	"- Ç°´«ËÍµã (Last Warp Location) ^777777["+lastwarp$+"]^000000",-,
-			"- ³ÇÕò (Towns/Cities)",Towns,
-			"- Ò°Íâ (Fields)",Fields,
-			"- ¶´Ñ¨ (Dungeons)",Dungeons,
-			"- ¹«»á³Ç±¤ (Guild Castles)",Castles,
-			"- µØÏÂ¹¤»áÃÜÑ¨ (Guild Dungeons)",Guild_Dungeons,
-			"- ÌØÊâµØÇø £¨Special Area)",Special;
+	menu	"- å‰ä¼ é€ç‚¹ (Last Warp Location) ^777777["+lastwarp$+"]^000000",-,
+			"- åŸé•‡ (Towns/Cities)",Towns,
+			"- é‡å¤– (Fields)",Fields,
+			"- æ´ç©´ (Dungeons)",Dungeons,
+			"- å…¬ä¼šåŸå ¡ (Guild Castles)",Castles,
+			"- åœ°ä¸‹å·¥ä¼šå¯†ç©´ (Guild Dungeons)",Guild_Dungeons,
+			"- ç‰¹æ®Šåœ°åŒº ï¼ˆSpecial Area)",Special;
 
 	if (lastwarp$ == "")
-		message strcharinfo(0),"Äú»¹Ã»±»´«ËÍ¡£ - You haven't warped anywhere yet.";
+		message strcharinfo(0),"æ‚¨è¿˜æ²¡è¢«ä¼ é€ã€‚ - You haven't warped anywhere yet.";
 	else
 		warp lastwarp$,lastwarpx,lastwarpy;
 	end;
@@ -160,14 +160,14 @@ function Restrict {
 // --------------------------------------------------
 	Towns:
 // --------------------------------------------------
-menu	"ÆÕÂ¡µÂÀ­-Prontera",T1, "°¬¶û±´Ëş-Alberta",T2, "°¬¶ûÅÁÀ¼-Aldebaran",T3, "Ó£»¨³Ç-Amatsu",T4, "°¥Ó´Ì©ÑÅ-Ayothaya",T5,
-    	"¿ËÄ§µº-Comodo",T7, "°¬Òò±´ºÕ-Einbech",T10, 
-    	"°¬Òò²¼ÂŞ¿Ë-Einbroch",T11, "¼ª·Ò-Geffen",T13, "À¥ÂØ-Gonryun",T14, "»Ù¸ğ-Hugel",T15,
-    	"ÒÀË¹Â³µÃ-Izlude",T16, "×¦ÍÛßŞ-Jawaii",T17, "ÀïÏ£ËşÀÖÕò-Lighthalzen",T18, "ÂåÑô-Louyang",T19, "½ª±ı³Ç-Lutie",T20,
-    	"ÂíÅ¬¿Ë-Manuk",T23, "Ã×µÂ¼Ó¶ûÌØÁªºÏ×¤µØ-Midgarts Expedition Camp",T24,
-    	"ÃÎÂŞ¿Ë-Morocc",T26, "ÄªË¹¿Æ±ÈÑÇ-Moscovia",T27, "ÎŞÃûµº-Nameless",T28,
-    	"ÄáÜ½·ÆÄ·-Niflheim",T29, "ì³Ñï-Payon",T30, "À­ºÕ-Rachel",T31, "»Ô»ÍÁìÓò-Splendide",T32, "ÍĞ¶û»ğÉ½-Thor Camp",T33,
-    	"ãë°ÍÀ­-Umbala",T34, "²®ÈÊË¹-Veins",T35, "ÖìÅµ-Yuno",T36;
+menu	"æ™®éš†å¾·æ‹‰-Prontera",T1, "è‰¾å°”è´å¡”-Alberta",T2, "è‰¾å°”å¸•å…°-Aldebaran",T3, "æ¨±èŠ±åŸ-Amatsu",T4, "å“å“Ÿæ³°é›…-Ayothaya",T5,
+    	"å…‹é­”å²›-Comodo",T7, "è‰¾å› è´èµ«-Einbech",T10, 
+    	"è‰¾å› å¸ƒç½—å…‹-Einbroch",T11, "å‰èŠ¬-Geffen",T13, "æ˜†ä»‘-Gonryun",T14, "æ¯è‘›-Hugel",T15,
+    	"ä¾æ–¯é²å¾—-Izlude",T16, "çˆªå“‡å’¿-Jawaii",T17, "é‡Œå¸Œå¡”ä¹é•‡-Lighthalzen",T18, "æ´›é˜³-Louyang",T19, "å§œé¥¼åŸ-Lutie",T20,
+    	"é©¬åŠªå…‹-Manuk",T23, "ç±³å¾·åŠ å°”ç‰¹è”åˆé©»åœ°-Midgarts Expedition Camp",T24,
+    	"æ¢¦ç½—å…‹-Morocc",T26, "è«æ–¯ç§‘æ¯”äºš-Moscovia",T27, "æ— åå²›-Nameless",T28,
+    	"å°¼èŠ™è²å§†-Niflheim",T29, "æ–æ‰¬-Payon",T30, "æ‹‰èµ«-Rachel",T31, "è¾‰ç…Œé¢†åŸŸ-Splendide",T32, "æ‰˜å°”ç«å±±-Thor Camp",T33,
+    	"æ±¶å·´æ‹‰-Umbala",T34, "ä¼¯ä»æ–¯-Veins",T35, "æœ±è¯º-Yuno",T36;
 
 T1: Go("prontera",155,183);
 T2: Go("alberta",116,57);
@@ -216,221 +216,221 @@ T36: Go("yuno",157,51);
 // --------------------------------------------------
 	Fields:
 // --------------------------------------------------
-menu	"Ìì½ò Ô­Ò°-Amatsu Field",F1, "°¥Ó´Ì©ÑÅ Ô­Ò°-Ayothaya Field",F2, "²ÊºçÇÅ ÁìÓò-Bifrost Field", F3,
-    	"°ÍÎ÷Æ½Ô­-Brasilis Field",F4, "¿ËÄ§µº É­ÁÖ/º£±ß ÇøÓò-Comodo Area",F5, "µÂÍßËû Ô­Ò°-Dewata Field",F6,
-    	"°¬¿¨À­Ææ Æ½Ô­-Blooming Flower Land",F7, "°¬Òô²¼ÂŞ¿Ë Ô­Ò°-Einbroch Field",F8, "°£µÏË¹ÌØË¹ ÇøÓò-El Dicastes",F9,
-    	"¼ª·Ò ÇøÓò-Geffen Field",F10, "À¥ÂØÔ­Ò°-Gonryun Field",F11, "»Ù¸ğ Ô­Ò°-Hugel Fields",F12,
-    	"ÀïÏ£ËşÀÖÕò Ô­Ò°-Lighthalzen Fields",F13, "ÂåÑô Ô­Ò°-Louyang Field",F14, "½ª±ı³Ç Ô­Ò°-Lutie Field",F15,
-    	"ÂíÀ´ÑÇ É­ÁÖ-Malaya Fields",F16, "ÂíÅ¬¿Ë¿õÒ°-Manuk Fields",F17, "ÃîÀÕÄá É½Âö ÇøÓò-Mjolnir Fields",F18,
-    	"ÄªË¹¿Æ±ÈÑÇ²İÔ­-Moscovia Fields",F19, "ÄáÜ½·ÆÄ· ÇøÓò-Niflheim Fields",F20, "ì³Ñï Ê÷ÁÖ-Payon Forests",F21,
-    	"ÆÕÂ¡µÂÀ­ ÇøÓò-Prontera Fields",F22, "À­ºÕ Ô­Ò°-Rachel Fields",F23, "ËÕ¿ËÀ­ÌØ É³Ä® ÇøÓò-Sograt Deserts",F24,
-    	"»Ô»ÍÁìÓò¿õÒ°-Splendide Fields",F25, "ãë°ÍÀ­ É­ÁÖÇøÓò-Umbala Fields",F26, "²®ÈÊË¹ ¿õÒ°-Veins Fields",F27,
-    	"ÖìÅµ Ô­Ò°-Yuno Fields",F28;
+menu	"å¤©æ´¥ åŸé‡-Amatsu Field",F1, "å“å“Ÿæ³°é›… åŸé‡-Ayothaya Field",F2, "å½©è™¹æ¡¥ é¢†åŸŸ-Bifrost Field", F3,
+    	"å·´è¥¿å¹³åŸ-Brasilis Field",F4, "å…‹é­”å²› æ£®æ—/æµ·è¾¹ åŒºåŸŸ-Comodo Area",F5, "å¾·ç“¦ä»– åŸé‡-Dewata Field",F6,
+    	"è‰¾å¡æ‹‰å¥‡ å¹³åŸ-Blooming Flower Land",F7, "è‰¾éŸ³å¸ƒç½—å…‹ åŸé‡-Einbroch Field",F8, "åŸƒè¿ªæ–¯ç‰¹æ–¯ åŒºåŸŸ-El Dicastes",F9,
+    	"å‰èŠ¬ åŒºåŸŸ-Geffen Field",F10, "æ˜†ä»‘åŸé‡-Gonryun Field",F11, "æ¯è‘› åŸé‡-Hugel Fields",F12,
+    	"é‡Œå¸Œå¡”ä¹é•‡ åŸé‡-Lighthalzen Fields",F13, "æ´›é˜³ åŸé‡-Louyang Field",F14, "å§œé¥¼åŸ åŸé‡-Lutie Field",F15,
+    	"é©¬æ¥äºš æ£®æ—-Malaya Fields",F16, "é©¬åŠªå…‹æ—·é‡-Manuk Fields",F17, "å¦™å‹’å°¼ å±±è„‰ åŒºåŸŸ-Mjolnir Fields",F18,
+    	"è«æ–¯ç§‘æ¯”äºšè‰åŸ-Moscovia Fields",F19, "å°¼èŠ™è²å§† åŒºåŸŸ-Niflheim Fields",F20, "æ–æ‰¬ æ ‘æ—-Payon Forests",F21,
+    	"æ™®éš†å¾·æ‹‰ åŒºåŸŸ-Prontera Fields",F22, "æ‹‰èµ« åŸé‡-Rachel Fields",F23, "è‹å…‹æ‹‰ç‰¹ æ²™æ¼  åŒºåŸŸ-Sograt Deserts",F24,
+    	"è¾‰ç…Œé¢†åŸŸæ—·é‡-Splendide Fields",F25, "æ±¶å·´æ‹‰ æ£®æ—åŒºåŸŸ-Umbala Fields",F26, "ä¼¯ä»æ–¯ æ—·é‡-Veins Fields",F27,
+    	"æœ±è¯º åŸé‡-Yuno Fields",F28;
 
 F1: setarray @c[2],190,197;
-	Disp("Ìì½ò Ô­Ò°-Amatsu Field",1,1); Pick("ama_fild");
+	Disp("å¤©æ´¥ åŸé‡-Amatsu Field",1,1); Pick("ama_fild");
 F2: setarray @c[2],173,134,212,150;
-	Disp("°¥Ó´Ì©ÑÅ Ô­Ò°-Ayothaya Field",1,2); Pick("ayo_fild");
+	Disp("å“å“Ÿæ³°é›… åŸé‡-Ayothaya Field",1,2); Pick("ayo_fild");
 F3: setarray @c[2],193,220,220,187;
-	Disp("²ÊºçÇÅ ÁìÓò-Bifrost Field",1,2); Pick("bif_fild");
+	Disp("å½©è™¹æ¡¥ é¢†åŸŸ-Bifrost Field",1,2); Pick("bif_fild");
 F4: setarray @c[2],74,32;
-	Disp("°ÍÎ÷Æ½Ô­-Brasilis Field",1,1); Pick("bra_fild");
+	Disp("å·´è¥¿å¹³åŸ-Brasilis Field",1,1); Pick("bra_fild");
 F5: setarray @c[2],180,178,231,160,191,172,228,194,224,203,190,223,234,177,194,175,172,172;
-	Disp("°Í²»Æä¿¨ É­ÁÖ-Papuchicha Forest:¿Ë¿ËÄ§ º£±ß 1-Kokomo beach 1:»ùÄËÒÀ ÕÓÔóµØ-Zenhai Marsh:¿Ë¿ËÄ§ º£±ß 2-Kokomo beach 2:°Í²»Æä¿¨ É­ÁÖ±ß½ç-Border of Papuchica forest:ÒªÈû¶¼ÊĞ É½ÌØÀÖÂü(Î÷)-Fortress Saint Darmain (West):·¢ÀÖË¹ µÆËşµº-Beacon Island, Pharos:ÒªÈû¶¼ÊĞ É½ÌØÀÖÂü(¶«)-Fortress Saint Darmain (East):ÒªÈû¶¼ÊĞ É½ÌØÀÖÂü(ÄÏ)-Fortress Saint Darmain (South)");
+	Disp("å·´ä¸å…¶å¡ æ£®æ—-Papuchicha Forest:å…‹å…‹é­” æµ·è¾¹ 1-Kokomo beach 1:åŸºä¹ƒä¾ æ²¼æ³½åœ°-Zenhai Marsh:å…‹å…‹é­” æµ·è¾¹ 2-Kokomo beach 2:å·´ä¸å…¶å¡ æ£®æ—è¾¹ç•Œ-Border of Papuchica forest:è¦å¡éƒ½å¸‚ å±±ç‰¹ä¹æ›¼(è¥¿)-Fortress Saint Darmain (West):å‘ä¹æ–¯ ç¯å¡”å²›-Beacon Island, Pharos:è¦å¡éƒ½å¸‚ å±±ç‰¹ä¹æ›¼(ä¸œ)-Fortress Saint Darmain (East):è¦å¡éƒ½å¸‚ å±±ç‰¹ä¹æ›¼(å—)-Fortress Saint Darmain (South)");
 	Pick("","cmd_fild01","cmd_fild02","cmd_fild03","cmd_fild04","cmd_fild05","cmd_fild06","cmd_fild07","cmd_fild08","cmd_fild09");
 F6: setarray @c[2],371,212;
-	Disp("µÂÍßËû Ô­Ò°-Dewata Field",1,1); Pick("dew_fild");
+	Disp("å¾·ç“¦ä»– åŸé‡-Dewata Field",1,1); Pick("dew_fild");
 F7: setarray @c[2],97,314;
-	Disp("°¬¿¨À­Ææ Æ½Ô­-Eclage Field",1,1); Pick("ecl_fild");
+	Disp("è‰¾å¡æ‹‰å¥‡ å¹³åŸ-Eclage Field",1,1); Pick("ecl_fild");
 F8: setarray @c[2],142,225,182,141,187,228,185,173,216,173,195,148,272,220,173,214,207,174,196,200;
-	Disp("°¬Òô²¼ÂŞ¿Ë Ô­Ò°-Einbroch Field",1,10); Pick("ein_fild");
+	Disp("è‰¾éŸ³å¸ƒç½—å…‹ åŸé‡-Einbroch Field",1,10); Pick("ein_fild");
 F9: setarray @c[2],143,132,143,217;
-	Disp("°£µÏË¹ÌØË¹ ÇøÓò-El Dicastes Field",1,2); Pick("dic_fild");
+	Disp("åŸƒè¿ªæ–¯ç‰¹æ–¯ åŒºåŸŸ-El Dicastes Field",1,2); Pick("dic_fild");
 F10: setarray @c[0],46,199,213,204,195,212,257,192,188,171,166,263,248,158,195,191,186,183,221,117,178,218,136,328,240,181,235,235,211,185;
-	 Disp("¼ª·Ò ÇøÓò-Geffen Field",0,14); Pick("gef_fild",1);
+	 Disp("å‰èŠ¬ åŒºåŸŸ-Geffen Field",0,14); Pick("gef_fild",1);
 F11: setarray @c[2],220,227;
-	 Disp("À¥ÂØÔ­Ò°-Gonryun Field",1,1); Pick("gon_fild");
+	 Disp("æ˜†ä»‘åŸé‡-Gonryun Field",1,1); Pick("gon_fild");
 F12: setarray @c[2],268,101,222,193,232,185,252,189,196,106,216,220,227,197;
-	 Disp("»Ù¸ğ Ô­Ò°-Hugel Field",1,7); Pick("hu_fild");
+	 Disp("æ¯è‘› åŸé‡-Hugel Field",1,7); Pick("hu_fild");
 F13: setarray @c[2],240,179,185,235,240,226;
-	 Disp("ÀïÏ£ËşÀÖÕò Ô­Ò°-Lighthalzen Field",1,3); Pick("lhz_fild");
+	 Disp("é‡Œå¸Œå¡”ä¹é•‡ åŸé‡-Lighthalzen Field",1,3); Pick("lhz_fild");
 F14: setarray @c[2],229,187;
-	 Disp("ÂåÑô Ô­Ò°-Louyang Field",1,1); Pick("lou_fild");
+	 Disp("æ´›é˜³ åŸé‡-Louyang Field",1,1); Pick("lou_fild");
 F15: setarray @c[2],115,145;
-	 Disp("½ª±ı³Ç Ô­Ò°-Lutie Field",1,1); Pick("xmas_fild");
+	 Disp("å§œé¥¼åŸ åŸé‡-Lutie Field",1,1); Pick("xmas_fild");
 F16: setarray @c[2],40,272,207,180;
-	 Disp("ÂíÀ´ÑÇ É­ÁÖ-Malaya Field",1,2); Pick("ma_fild");
+	 Disp("é©¬æ¥äºš æ£®æ—-Malaya Field",1,2); Pick("ma_fild");
 F17: setarray @c[2],35,236,35,262,84,365;
-	 Disp("ÂíÅ¬¿Ë¿õÒ°-Manuk Field",1,3); Pick("man_fild");
+	 Disp("é©¬åŠªå…‹æ—·é‡-Manuk Field",1,3); Pick("man_fild");
 F18: setarray @c[2],204,120,175,193,208,213,179,180,181,240,195,270,235,202,188,215,205,144,245,223,180,206,196,208;
-	 Disp("ÃîÀÕÄá É½Âö ÇøÓò-Mjolnir Field",1,12); Pick("mjolnir_");
+	 Disp("å¦™å‹’å°¼ å±±è„‰ åŒºåŸŸ-Mjolnir Field",1,12); Pick("mjolnir_");
 F19: setarray @c[2],82,104,131,147;
-	 Disp("ÄªË¹¿Æ±ÈÑÇ²İÔ­-Moscovia Field",1,2); Pick("mosk_fild");
+	 Disp("è«æ–¯ç§‘æ¯”äºšè‰åŸ-Moscovia Field",1,2); Pick("mosk_fild");
 F20: setarray @c[2],215,229,167,234;
-	 Disp("ÄáÜ½·ÆÄ· ÇøÓò-Niflheim Field",1,2); Pick("nif_fild");
+	 Disp("å°¼èŠ™è²å§† åŒºåŸŸ-Niflheim Field",1,2); Pick("nif_fild");
 F21: setarray @c[2],158,206,151,219,205,148,186,247,134,204,193,235,200,177,137,189,201,224,160,205,194,150;
-	 Disp("ì³Ñï Ê÷ÁÖ-Payon Forest",1,11); Pick("pay_fild");
+	 Disp("æ–æ‰¬ æ ‘æ—-Payon Forest",1,11); Pick("pay_fild");
 F22: setarray @c[0],208,227,190,206,240,206,190,143,307,252,239,213,185,188,193,194,187,218,210,183,195,149,198,164;
-	 Disp("ÆÕÂ¡µÂÀ­ ÇøÓò-Prontera Field",0,11); Pick("prt_fild",1);
+	 Disp("æ™®éš†å¾·æ‹‰ åŒºåŸŸ-Prontera Field",0,11); Pick("prt_fild",1);
 F23: setarray @c[2],192,162,235,166,202,206,202,208,225,202,202,214,263,196,217,201,87,121,277,181,221,185,175,200,174,197;
 	 Disp("Rachel Field-Rachel Field",1,13); Pick("ra_fild");
 F24: setarray @c[2],219,205,177,206,194,182,224,170,198,216,156,187,185,263,206,228,208,238,209,223,85,97,207,202,31,195,38,195;
-	 Disp("ËÕ¿ËÀ­ÌØ É³Ä® ÇøÓò-Sograt Desert",1,22); Pick("moc_fild");
+	 Disp("è‹å…‹æ‹‰ç‰¹ æ²™æ¼  åŒºåŸŸ-Sograt Desert",1,22); Pick("moc_fild");
 F25: setarray @c[2],175,186,236,184,188,204;
-	 Disp("»Ô»ÍÁìÓò¿õÒ°-Splendide Field",1,3); Pick("spl_fild");
+	 Disp("è¾‰ç…Œé¢†åŸŸæ—·é‡-Splendide Field",1,3); Pick("spl_fild");
 F26: setarray @c[2],217,206,223,221,237,215,202,197;
-	 Disp("ãë°ÍÀ­ É­ÁÖÇøÓò-Umbala Field",1,4); Pick("um_fild");
+	 Disp("æ±¶å·´æ‹‰ æ£®æ—åŒºåŸŸ-Umbala Field",1,4); Pick("um_fild");
 F27: setarray @c[2],186,175,196,370,222,45,51,250,202,324,150,223,149,307;
-	 Disp("²®ÈÊË¹ ¿õÒ°-Veins Field",1,7); Pick("ve_fild");
+	 Disp("ä¼¯ä»æ–¯ æ—·é‡-Veins Field",1,7); Pick("ve_fild");
 F28: setarray @c[2],189,224,192,207,221,157,226,199,223,177,187,232,231,174,196,203,183,214,200,124,195,226,210,304;
-	 Disp("ÖìÅµ Ô­Ò°-Yuno Field",1,12); Pick("yuno_fild");
+	 Disp("æœ±è¯º åŸé‡-Yuno Field",1,12); Pick("yuno_fild");
 
 // --------------------------------------------------
 	Dungeons:
 // --------------------------------------------------
-menu	"ÉîÔ¨ºşË® µØÏÂ¶´Ñ¨-Abyss Lakes",D1, "Ó£»¨³ÇÃÔ¹¬-Amatsu Dungeon",D2, "ÂìÒÏµØÓü ÃÜÑ¨-Anthell",D3,
-    	"¹Å´úÉñµî ÃÔ¹¬-Ayothaya Dungeon",D4, "¿ËÄ§µº º£±ß-Beach Dungeon",D5, "²ÊºçÇÅ¸ßËş-Bifrost Tower",D41,
-    	"ÉúÌåÊÔÑé ÑĞ¾¿Ëù-Bio Labs",D6, "°ÍÎ÷ÆÙ²¼¶´Ñ¨-Brasilis Dungeon",D7, "º£µ× ¶´¿ß-Byalan Dungeon",D8, "°¬¶ûÅÁÀ¼ ÖÓËş-Clock Tower",D9,
-    	"ÃîÀÕÄá ·ÏÆú¿ó³¡-Coal Mines",D10, "ÆÕÂ¡µÂÀ­ µØÏÂË®µÀ-Culvert",D11, "ÎŞÃûµºĞŞµÀÔº-Cursed Abbey",D12, "µÂÍßËû »ğÉ½¶´Ñ¨-Dewata Dungeon",D13,
-    	"°¬Òô²¼ÂŞ¿Ë ¿óÉ½¶´Ñ¨-Einbroch Dungeon",D14, "¸ğàúÄáÑÇ-Gefenia",D15, "¼ª·ÒËş µØÏÂ ÃÜÑ¨-Geffen Dungeon",D16,
-    	"¿ËÀ×Ë¹ÌØººÄ·¹Å³Ç-Glast Heim",D17, "À¥ÂØ¶´Ñ¨-Gonryun Dungeon",D18, "ÃÔ²ØÉ­ÁÖ-Hidden Dungeon",D19,
-    	"±ù¶´Ñ¨-Ice Dungeon",D20, "ÓÅÅäÀŞË¹ ·ÏĞæ-Juperos",D21, "»úĞµÍŞÍŞ¹¤³§-Kiel Dungeon",D22, "ÂåÑô ¹Å¶¼ÍõÁê-Louyang Dungeon",D23,
-    	"Åµ¿ÉÂŞµÂÈÜ¶´-Magma Dungeon",D24, "ÃàÃàµº¶´Ñ¨-Malangdo Dungeon",D25, "ÄªË¹¿ÆÉ­ÁÖ-Moscovia Dungeon",D26,
-    	"ÄáµÂ»ô¸ñµÄ³²Ñ¨-Nidhogg's Dungeon",D27, "°Â¶¡Éñµî-Odin Temple",D28, "ÊŞÈËµØÏÂ¶´¿ß-Orc Dungeon",D29,
-    	"ÅáÑïÃÔ¹¬-Payon Dungeon",D30, "½ğ×ÖËş ÃÔ¹¬-Pyramids",D31, "À­ºÕ ÉñµîÊ¥Óò-Rachel Sanctuary",D32,
-    	"¼×³æ¶´Ñ¨-Scaraba Hole",D33, "Ê··Ò¿ËË¹ ÃÜÑ¨-Sphinx",D34, "³ÁÃ»Ö®´¬-Sunken Ship",D35, "´ïÄÉÍĞË¹Ö®Ëş-Thanatos Tower",D36,
-    	"²®ÈÊË¹ »ğÉ½¶´¿ß-Thor Volcano",D37, "Íæ¾ß¹¤³§-Toy Factory",D38, "ÎÚ¹êµº-Turtle Dungeon",D39, "ãë°ÍÀ­É­ÁÖ-Umbala Dungeon",D40;
+menu	"æ·±æ¸Šæ¹–æ°´ åœ°ä¸‹æ´ç©´-Abyss Lakes",D1, "æ¨±èŠ±åŸè¿·å®«-Amatsu Dungeon",D2, "èš‚èšåœ°ç‹± å¯†ç©´-Anthell",D3,
+    	"å¤ä»£ç¥æ®¿ è¿·å®«-Ayothaya Dungeon",D4, "å…‹é­”å²› æµ·è¾¹-Beach Dungeon",D5, "å½©è™¹æ¡¥é«˜å¡”-Bifrost Tower",D41,
+    	"ç”Ÿä½“è¯•éªŒ ç ”ç©¶æ‰€-Bio Labs",D6, "å·´è¥¿ç€‘å¸ƒæ´ç©´-Brasilis Dungeon",D7, "æµ·åº• æ´çªŸ-Byalan Dungeon",D8, "è‰¾å°”å¸•å…° é’Ÿå¡”-Clock Tower",D9,
+    	"å¦™å‹’å°¼ åºŸå¼ƒçŸ¿åœº-Coal Mines",D10, "æ™®éš†å¾·æ‹‰ åœ°ä¸‹æ°´é“-Culvert",D11, "æ— åå²›ä¿®é“é™¢-Cursed Abbey",D12, "å¾·ç“¦ä»– ç«å±±æ´ç©´-Dewata Dungeon",D13,
+    	"è‰¾éŸ³å¸ƒç½—å…‹ çŸ¿å±±æ´ç©´-Einbroch Dungeon",D14, "è‘›å¸”å°¼äºš-Gefenia",D15, "å‰èŠ¬å¡” åœ°ä¸‹ å¯†ç©´-Geffen Dungeon",D16,
+    	"å…‹é›·æ–¯ç‰¹æ±‰å§†å¤åŸ-Glast Heim",D17, "æ˜†ä»‘æ´ç©´-Gonryun Dungeon",D18, "è¿·è—æ£®æ—-Hidden Dungeon",D19,
+    	"å†°æ´ç©´-Ice Dungeon",D20, "ä¼˜é…æ“‚æ–¯ åºŸå¢Ÿ-Juperos",D21, "æœºæ¢°å¨ƒå¨ƒå·¥å‚-Kiel Dungeon",D22, "æ´›é˜³ å¤éƒ½ç‹é™µ-Louyang Dungeon",D23,
+    	"è¯ºå¯ç½—å¾·æº¶æ´-Magma Dungeon",D24, "ç»µç»µå²›æ´ç©´-Malangdo Dungeon",D25, "è«æ–¯ç§‘æ£®æ—-Moscovia Dungeon",D26,
+    	"å°¼å¾·éœæ ¼çš„å·¢ç©´-Nidhogg's Dungeon",D27, "å¥¥ä¸ç¥æ®¿-Odin Temple",D28, "å…½äººåœ°ä¸‹æ´çªŸ-Orc Dungeon",D29,
+    	"è£´æ‰¬è¿·å®«-Payon Dungeon",D30, "é‡‘å­—å¡” è¿·å®«-Pyramids",D31, "æ‹‰èµ« ç¥æ®¿åœ£åŸŸ-Rachel Sanctuary",D32,
+    	"ç”²è™«æ´ç©´-Scaraba Hole",D33, "å²èŠ¬å…‹æ–¯ å¯†ç©´-Sphinx",D34, "æ²‰æ²¡ä¹‹èˆ¹-Sunken Ship",D35, "è¾¾çº³æ‰˜æ–¯ä¹‹å¡”-Thanatos Tower",D36,
+    	"ä¼¯ä»æ–¯ ç«å±±æ´çªŸ-Thor Volcano",D37, "ç©å…·å·¥å‚-Toy Factory",D38, "ä¹Œé¾Ÿå²›-Turtle Dungeon",D39, "æ±¶å·´æ‹‰æ£®æ—-Umbala Dungeon",D40;
 
 D1: setarray @c[2],261,272,275,270,116,27;
-	Disp("ÉîÔ¨ºşË® µØÏÂ¶´Ñ¨-Abyss Lakes",1,3); Pick("abyss_");
+	Disp("æ·±æ¸Šæ¹–æ°´ åœ°ä¸‹æ´ç©´-Abyss Lakes",1,3); Pick("abyss_");
 D2: setarray @c[2],228,11,34,41,119,14;
-	Disp("Ó£»¨³ÇÃÔ¹¬-Amatsu Dungeon",1,3); Pick("ama_dun");
+	Disp("æ¨±èŠ±åŸè¿·å®«-Amatsu Dungeon",1,3); Pick("ama_dun");
 D3: setarray @c[2],35,262,168,170;
-	Disp("ÂìÒÏµØÓü ÃÜÑ¨-Anthell",1,2); Pick("anthell");
+	Disp("èš‚èšåœ°ç‹± å¯†ç©´-Anthell",1,2); Pick("anthell");
 D4: setarray @c[2],275,19,24,26;
-	Disp("¹Å´úÉñµî ÃÔ¹¬:ÃÔ¹¬ÄÚ²¿-Ayothaya Dungeon:Inside Ancient Shrine"); Pick("ayo_dun");
+	Disp("å¤ä»£ç¥æ®¿ è¿·å®«:è¿·å®«å†…éƒ¨-Ayothaya Dungeon:Inside Ancient Shrine"); Pick("ayo_dun");
 D5: setarray @c[2],266,67,255,244,23,260;
-	Disp("¿ËÄ§µº º£±ß-Beach Dungeon",1,3); Pick("","beach_dun","beach_dun2","beach_dun3");
+	Disp("å…‹é­”å²› æµ·è¾¹-Beach Dungeon",1,3); Pick("","beach_dun","beach_dun2","beach_dun3");
 D6: setarray @c[2],150,288,150,18,140,134,244,52;
-	Disp("ÉúÌåÊÔÑé ÑĞ¾¿Ëù-Bio Lab",1,4); Pick("lhz_dun");
+	Disp("ç”Ÿä½“è¯•éªŒ ç ”ç©¶æ‰€-Bio Lab",1,4); Pick("lhz_dun");
 D7: setarray @c[2],87,47,262,262;
-	Disp("°ÍÎ÷ÆÙ²¼¶´Ñ¨-Brasilis Dungeon",1,2); Pick("bra_dun");
+	Disp("å·´è¥¿ç€‘å¸ƒæ´ç©´-Brasilis Dungeon",1,2); Pick("bra_dun");
 D8: setarray @c[0],168,168,253,252,236,204,32,63,26,27,141,187;
-	Disp("º£µ× ¶´¿ß-Byalan Dungeon",1,6); Pick("iz_dun",1);
+	Disp("æµ·åº• æ´çªŸ-Byalan Dungeon",1,6); Pick("iz_dun",1);
 D9: setarray @c[2],199,159,148,283,65,147,56,155,297,25,127,169,277,178,268,74;
-	Disp("ÖÓËş 1²ã-ClockTower Level 1:ÖÓËş 2²ã-ClockTower Level 2:ÖÓËş 3²ã-ClockTower Level 3:ÖÓËş 4²ã-ClockTower Level 4:ÖÓËşµØÏÂ 1²ã-ClockTower Level B1:ÖÓËşµØÏÂ 2²ã-ClockTower Level B2:ÖÓËşµØÏÂ 3²ã-ClockTower Level B3:ÖÓËşµØÏÂ 4²ã-ClockTower Level B4");
+	Disp("é’Ÿå¡” 1å±‚-ClockTower Level 1:é’Ÿå¡” 2å±‚-ClockTower Level 2:é’Ÿå¡” 3å±‚-ClockTower Level 3:é’Ÿå¡” 4å±‚-ClockTower Level 4:é’Ÿå¡”åœ°ä¸‹ 1å±‚-ClockTower Level B1:é’Ÿå¡”åœ°ä¸‹ 2å±‚-ClockTower Level B2:é’Ÿå¡”åœ°ä¸‹ 3å±‚-ClockTower Level B3:é’Ÿå¡”åœ°ä¸‹ 4å±‚-ClockTower Level B4");
 	Pick("","c_tower1","c_tower2","c_tower3","c_tower4","alde_dun01","alde_dun02","alde_dun03","alde_dun04");
 D10: setarray @c[2],52,17,381,343,302,262;
-	 Disp("ÃîÀÕÄá ·ÏÆú¿ó³¡-Coal Mines",1,3); Pick("mjo_dun");
+	 Disp("å¦™å‹’å°¼ åºŸå¼ƒçŸ¿åœº-Coal Mines",1,3); Pick("mjo_dun");
 D11: setarray @c[2],131,247,19,19,180,169,100,92;
-	 Disp("ÆÕÂ¡µÂÀ­ µØÏÂË®µÀ-Culvert",1,4); Pick("","prt_sewb1","prt_sewb2","prt_sewb3","prt_sewb4");
+	 Disp("æ™®éš†å¾·æ‹‰ åœ°ä¸‹æ°´é“-Culvert",1,4); Pick("","prt_sewb1","prt_sewb2","prt_sewb3","prt_sewb4");
 D12: setarray @c[2],51,14,150,11,120,10;
-	 Disp("ÎŞÃûµºĞŞµÀÔº-Cursed Abbey",1,3); Pick("abbey");
+	 Disp("æ— åå²›ä¿®é“é™¢-Cursed Abbey",1,3); Pick("abbey");
 D13: setarray @c[2],285,160,299,29;
-	 Disp("µÂÍßËû »ğÉ½¶´Ñ¨-Dewata Dungeon",1,2); Pick("dew_dun");
+	 Disp("å¾·ç“¦ä»– ç«å±±æ´ç©´-Dewata Dungeon",1,2); Pick("dew_dun");
 D14: setarray @c[2],22,14,292,290;
-	 Disp("°¬Òô²¼ÂŞ¿Ë ¿óÉ½¶´Ñ¨-Einbroch Dungeon",1,2); Pick("ein_dun");
+	 Disp("è‰¾éŸ³å¸ƒç½—å…‹ çŸ¿å±±æ´ç©´-Einbroch Dungeon",1,2); Pick("ein_dun");
 D15: setarray @c[2],40,103,203,34,266,168,130,272;
-	 Disp("¸ğàúÄáÑÇ-Gefenia",1,4); Pick("gefenia",0);
+	 Disp("è‘›å¸”å°¼äºš-Gefenia",1,4); Pick("gefenia",0);
 D16: setarray @c[0],104,99,115,236,106,132,203,200;
-	 Disp("¼ª·ÒËş µØÏÂ ÃÜÑ¨-Geffen Dungeon",1,4); Pick("gef_dun",1);
+	 Disp("å‰èŠ¬å¡” åœ°ä¸‹ å¯†ç©´-Geffen Dungeon",1,4); Pick("gef_dun",1);
 D17: setarray @c[2],370,304,199,29,104,25,150,15,157,287,147,15,258,255,108,291,171,283,68,277,156,7,12,7,133,271,224,274,14,70,150,14;
-	 Disp("¹Å³ÇÈë¿Ú-Entrance:µØÉÏÂ¥²ã 1²ã-Castles 1:µØÉÏÂ¥²ã 2²ã-Castles 2:ÆïÊ¿ÍÅ 1²ã-Chivalry 1:ÆïÊ¿ÍÅ 2²ã-Chivalry 2:µØÏÂ¹«Ä¹-Churchyard:µØÏÂË®µÀ 1²ã-Culvert 1:µØÏÂË®µÀ 2²ã-Culvert 2:µØÏÂË®µÀ 3²ã-Culvert 3:µØÏÂË®µÀ 4²ã-Culvert 4:ĞŞµÀÔº-St. Abbey:Â¥ÌİÃÜÑ¨-Staircase Dungeon:µØÏÂ¶´Ñ¨ 1²ã-Underground Cave 1:µØÏÂ¶´Ñ¨ 2²ã-Underground Cave 2:µØÏÂ¼àÓü 1²ã-Underground Prison 1:µØÏÂ¼àÓü 2²ã-Underground Prison 2");
+	 Disp("å¤åŸå…¥å£-Entrance:åœ°ä¸Šæ¥¼å±‚ 1å±‚-Castles 1:åœ°ä¸Šæ¥¼å±‚ 2å±‚-Castles 2:éª‘å£«å›¢ 1å±‚-Chivalry 1:éª‘å£«å›¢ 2å±‚-Chivalry 2:åœ°ä¸‹å…¬å¢“-Churchyard:åœ°ä¸‹æ°´é“ 1å±‚-Culvert 1:åœ°ä¸‹æ°´é“ 2å±‚-Culvert 2:åœ°ä¸‹æ°´é“ 3å±‚-Culvert 3:åœ°ä¸‹æ°´é“ 4å±‚-Culvert 4:ä¿®é“é™¢-St. Abbey:æ¥¼æ¢¯å¯†ç©´-Staircase Dungeon:åœ°ä¸‹æ´ç©´ 1å±‚-Underground Cave 1:åœ°ä¸‹æ´ç©´ 2å±‚-Underground Cave 2:åœ°ä¸‹ç›‘ç‹± 1å±‚-Underground Prison 1:åœ°ä¸‹ç›‘ç‹± 2å±‚-Underground Prison 2");
 	 Pick("","glast_01","gl_cas01","gl_cas02","gl_knt01","gl_knt02","gl_chyard","gl_sew01","gl_sew02","gl_sew03","gl_sew04","gl_church","gl_step","gl_dun01","gl_dun02","gl_prison","gl_prison1");
 D18: setarray @c[2],153,53,28,113,68,16;
-	 Disp("À¥ÂØ¶´Ñ¨-Gonryun Dungeon",1,3); Pick("gon_dun");
+	 Disp("æ˜†ä»‘æ´ç©´-Gonryun Dungeon",1,3); Pick("gon_dun");
 D19: setarray @c[2],176,7,93,20,23,8;
-	 Disp("ÃÔ²ØÉ­ÁÖ-Hidden Dungeon",1,3); Pick("prt_maze");
+	 Disp("è¿·è—æ£®æ—-Hidden Dungeon",1,3); Pick("prt_maze");
 D20: setarray @c[2],157,14,151,155,149,22,33,158;
-	 Disp("±ù¶´Ñ¨-Ice Dungeon",1,4); Pick("ice_dun");
+	 Disp("å†°æ´ç©´-Ice Dungeon",1,4); Pick("ice_dun");
 D21: setarray @c[2],140,51,53,247,37,63,150,285;
-	 Disp("·ÏĞæÈë¿Ú-Entrance:·ÏĞæ 1²ã-Juperos 1:·ÏĞæ 2²ã-Juperos 2:·ÏĞæºËĞÄ-Core");
+	 Disp("åºŸå¢Ÿå…¥å£-Entrance:åºŸå¢Ÿ 1å±‚-Juperos 1:åºŸå¢Ÿ 2å±‚-Juperos 2:åºŸå¢Ÿæ ¸å¿ƒ-Core");
 	 Pick("","jupe_cave","juperos_01","juperos_02","jupe_core");
 D22: setarray @c[2],28,226,41,198;
-	 Disp("»úĞµÍŞÍŞ¹¤³§-Kiel Dungeon",1,2); Pick("kh_dun");
+	 Disp("æœºæ¢°å¨ƒå¨ƒå·¥å‚-Kiel Dungeon",1,2); Pick("kh_dun");
 D23: setarray @c[2],218,196,282,20,165,38;
-	 Disp("¹Å¶¼ÍõÁê-The Royal Tomb:¹Å¶¼ÍõÁêÄÚ²¿-Inside The Royal Tomb:ÉóÁ¼¹¬-Suei Long Gon"); Pick("lou_dun");
+	 Disp("å¤éƒ½ç‹é™µ-The Royal Tomb:å¤éƒ½ç‹é™µå†…éƒ¨-Inside The Royal Tomb:å®¡è‰¯å®«-Suei Long Gon"); Pick("lou_dun");
 D24: setarray @c[2],126,68,47,30;
-	 Disp("Åµ¿ÉÂŞµÂÈÜ¶´-Magma Dungeon",1,2); Pick("mag_dun");
+	 Disp("è¯ºå¯ç½—å¾·æº¶æ´-Magma Dungeon",1,2); Pick("mag_dun");
 D25: setarray @c[2],33,230;
-	 Disp("ÃàÃàµº¶´Ñ¨-Malangdo Dungeon",1,1); Pick("mal_dun");
+	 Disp("ç»µç»µå²›æ´ç©´-Malangdo Dungeon",1,1); Pick("mal_dun");
 D26: setarray @c[2],189,48,165,30,32,135;
-	 Disp("ÄªË¹¿ÆÉ­ÁÖ-Moscovia Dungeon",1,3); Pick("mosk_dun");
+	 Disp("è«æ–¯ç§‘æ£®æ—-Moscovia Dungeon",1,3); Pick("mosk_dun");
 D27: setarray @c[2],61,239,60,271;
-	 Disp("ÄáµÂ»ô¸ñµÄ³²Ñ¨-Nidhogg Dungeon",1,2); Pick("nyd_dun");
+	 Disp("å°¼å¾·éœæ ¼çš„å·¢ç©´-Nidhogg Dungeon",1,2); Pick("nyd_dun");
 D28: setarray @c[2],298,167,224,149,266,280;
-	 Disp("°Â¶¡Éñµî-Odin Temple",1,3); Pick("odin_tem");
+	 Disp("å¥¥ä¸ç¥æ®¿-Odin Temple",1,3); Pick("odin_tem");
 D29: setarray @c[2],32,170,21,185;
-	 Disp("ÊŞÈËµØÏÂ¶´¿ß-Orc Dungeon",1,2); Pick("orcsdun");
+	 Disp("å…½äººåœ°ä¸‹æ´çªŸ-Orc Dungeon",1,2); Pick("orcsdun");
 D30: setarray @c[0],21,183,19,33,19,63,155,159,201,204;
-	 Disp("ÅáÑïÃÔ¹¬-Payon Dungeon",1,5); Pick("pay_dun",1);
+	 Disp("è£´æ‰¬è¿·å®«-Payon Dungeon",1,5); Pick("pay_dun",1);
 D31: setarray @c[2],192,9,10,192,100,92,181,11,94,96,192,8,94,96,192,8;
-	 Disp("½ğ×ÖËş 1²ã-Pyramids 1:½ğ×ÖËş 2²ã-Pyramids 2:½ğ×ÖËş 3²ã-Pyramids 3:½ğ×ÖËş 4²ã-Pyramids 4:½ğ×ÖËşµØÏÂ 1²ã-Pyramids B1:½ğ×ÖËşµØÏÂ 2²ã-Pyramids B2:½ğ×ÖËşµØÏÂ 1²ã - ÃÎ÷Ê-Pyramids B1 Nightmare:½ğ×ÖËşµØÏÂ 2²ã - ÃÎ÷Ê-Pyramids B2 Nightmare");
+	 Disp("é‡‘å­—å¡” 1å±‚-Pyramids 1:é‡‘å­—å¡” 2å±‚-Pyramids 2:é‡‘å­—å¡” 3å±‚-Pyramids 3:é‡‘å­—å¡” 4å±‚-Pyramids 4:é‡‘å­—å¡”åœ°ä¸‹ 1å±‚-Pyramids B1:é‡‘å­—å¡”åœ°ä¸‹ 2å±‚-Pyramids B2:é‡‘å­—å¡”åœ°ä¸‹ 1å±‚ - æ¢¦é­‡-Pyramids B1 Nightmare:é‡‘å­—å¡”åœ°ä¸‹ 2å±‚ - æ¢¦é­‡-Pyramids B2 Nightmare");
 	 Pick("","moc_pryd01","moc_pryd02","moc_pryd03","moc_pryd04","moc_pryd05","moc_pryd06","moc_prydn1","moc_prydn2");
 D32: setarray @c[2],140,11,32,21,8,149,204,218,150,9;
-	 Disp("À­ºÕ ÉñµîÊ¥Óò-Rachel Sanctuary",1,5); Pick("ra_san");
+	 Disp("æ‹‰èµ« ç¥æ®¿åœ£åŸŸ-Rachel Sanctuary",1,5); Pick("ra_san");
 D33: setarray @c[2],364,44,101,141;
-	 Disp("¼×³æ¶´Ñ¨-Scaraba Hole",1,2); Pick("dic_dun");
+	 Disp("ç”²è™«æ´ç©´-Scaraba Hole",1,2); Pick("dic_dun");
 D34: setarray @c[2],288,9,149,81,210,54,10,222,100,99;
-	 Disp("Ê··Ò¿ËË¹ ÃÜÑ¨-Sphinx",1,5); Pick("","in_sphinx1","in_sphinx2","in_sphinx3","in_sphinx4","in_sphinx5");
+	 Disp("å²èŠ¬å…‹æ–¯ å¯†ç©´-Sphinx",1,5); Pick("","in_sphinx1","in_sphinx2","in_sphinx3","in_sphinx4","in_sphinx5");
 D35: setarray @c[2],69,24,102,27;
-	 Disp("³ÁÃ»Ö®´¬-Sunken Ship",1,2); Pick("treasure");
+	 Disp("æ²‰æ²¡ä¹‹èˆ¹-Sunken Ship",1,2); Pick("treasure");
 D36: setarray @c[2],150,39,150,136,220,158,59,143,62,11,89,221,35,166,93,148,29,107,159,138,19,20,130,52;
-	 Disp("´ïÄÉÍĞË¹Ö®Ëş-Thanatos Tower",1,12); Pick("tha_t");
+	 Disp("è¾¾çº³æ‰˜æ–¯ä¹‹å¡”-Thanatos Tower",1,12); Pick("tha_t");
 D37: setarray @c[2],21,228,75,205,34,272;
-	 Disp("²®ÈÊË¹ »ğÉ½¶´¿ß-Thor Volcano",1,3); Pick("thor_v");
+	 Disp("ä¼¯ä»æ–¯ ç«å±±æ´çªŸ-Thor Volcano",1,3); Pick("thor_v");
 D38: setarray @c[2],205,15,129,133;
-	 Disp("Íæ¾ß¹¤³§-Toy Factory",1,2); Pick("xmas_dun");
+	 Disp("ç©å…·å·¥å‚-Toy Factory",1,2); Pick("xmas_dun");
 D39: setarray @c[2],154,49,148,261,132,189,100,192;
-	 Disp("Èë¿Ú-Entrance:ÎÚ¹êµº 1²ã-Turtle Dungeon 1:ÎÚ¹êµº 2²ã-Turtle Dungeon 2:ÎÚ¹êµº 3²ã-Turtle Dungeon 3"); Pick("tur_dun");
+	 Disp("å…¥å£-Entrance:ä¹Œé¾Ÿå²› 1å±‚-Turtle Dungeon 1:ä¹Œé¾Ÿå²› 2å±‚-Turtle Dungeon 2:ä¹Œé¾Ÿå²› 3å±‚-Turtle Dungeon 3"); Pick("tur_dun");
 D40: setarray @c[2],42,31,48,30,204,78;
-	 Disp("Ê÷Ä¾ÀïµÄÄ¾¹¤Ëù-Carpenter's Shop in the Tree:Ê÷Ä¾ÀïµÄÒì½çÖ®Â·-Passage to a Foreign World:ÌìµØÊ÷Ò¶Ê÷¸É-Hvergermil's Fountain");
+	 Disp("æ ‘æœ¨é‡Œçš„æœ¨å·¥æ‰€-Carpenter's Shop in the Tree:æ ‘æœ¨é‡Œçš„å¼‚ç•Œä¹‹è·¯-Passage to a Foreign World:å¤©åœ°æ ‘å¶æ ‘å¹²-Hvergermil's Fountain");
 	 Pick("","um_dun01","um_dun02","yggdrasil01");
 D41: setarray @c[2],57,13,64,88,45,14,26,23;
-	 Disp("²ÊºçÇÅ¸ßËş-Bifrost Tower",1,4); Pick("ecl_tdun");
+	 Disp("å½©è™¹æ¡¥é«˜å¡”-Bifrost Tower",1,4); Pick("ecl_tdun");
 
 // --------------------------------------------------
 	Castles:
 // --------------------------------------------------
-menu	"°¬¶ûÅÁÀ¼³Ç±¤-Aldebaran Castles",C1, "¼ª·Ò³Ç±¤-Geffen Castles",C2, "ì³Ñï³Ç±¤-Payon Castles",C3,
-    	"ÆÕÂ¡µÂÀ­³Ç±¤-Prontera Castles",C4, "°¢Â¬ÄÉ±´×È³Ç±¤-Arunafeltz Castles",C5, "Ğã·¢×È·¢µÂ³Ç±¤-Schwaltzvalt Castles",C6;
+menu	"è‰¾å°”å¸•å…°åŸå ¡-Aldebaran Castles",C1, "å‰èŠ¬åŸå ¡-Geffen Castles",C2, "æ–æ‰¬åŸå ¡-Payon Castles",C3,
+    	"æ™®éš†å¾·æ‹‰åŸå ¡-Prontera Castles",C4, "é˜¿å¢çº³è´å…¹åŸå ¡-Arunafeltz Castles",C5, "ç§€å‘å…¹å‘å¾·åŸå ¡-Schwaltzvalt Castles",C6;
 
 C1: setarray @c[2],48,83,95,249,142,85,239,242,264,90;
-	Disp("ÄÈÒ×ĞŞ·¬Ë¹ËşÒı-Neuschwanstein:ºõº¹ĞŞ·¬¼ÑÎÚ-Hohenschwangau:Å¦À¶±´ÀÕ¿Ë-Nuenberg:²¼ÀÕ´Ì²¼ÀÕ¿Ë-Wuerzburg:ÂŞÌ½²¼ÀÕ¿Ë-Rothenburg");
+	Disp("å¨œæ˜“ä¿®ç•ªæ–¯å¡”å¼•-Neuschwanstein:ä¹æ±—ä¿®ç•ªä½³ä¹Œ-Hohenschwangau:çº½è“è´å‹’å…‹-Nuenberg:å¸ƒå‹’åˆºå¸ƒå‹’å…‹-Wuerzburg:ç½—æ¢å¸ƒå‹’å…‹-Rothenburg");
 	Pick("","alde_gld","alde_gld","alde_gld","alde_gld","alde_gld");
 C2: setarray @c[2],214,75,308,240,143,240,193,278,305,87;
-	Disp("À×ÆÕÁ¢ÎÂ-Repherion:Ò«²¼Á¦¸ñ-Eeyolbriggar:Ò×Ë¾ÄÇÆÕ-Yesnelph:ÅàÀÕ¸ñ-Bergel:Ã¼ÈöË¿´ï´Ì-Mersetzdeitz");
+	Disp("é›·æ™®ç«‹æ¸©-Repherion:è€€å¸ƒåŠ›æ ¼-Eeyolbriggar:æ˜“å¸é‚£æ™®-Yesnelph:åŸ¹å‹’æ ¼-Bergel:çœ‰æ’’ä¸è¾¾åˆº-Mersetzdeitz");
 	Pick("","gef_fild13","gef_fild13","gef_fild13","gef_fild13","gef_fild13");
 C3: setarray @c[2],121,233,295,116,317,293,140,160,204,266;
-	Disp("Ã÷Í¤-Bright Arbor:ÌìÌ³-Scarlet Palace:·ğÓ°-Holy Shadow:ºìÂ¥-Sacred Altar:ÖñÁÖá­-Bamboo Grove Hill");
+	Disp("æ˜äº­-Bright Arbor:å¤©å›-Scarlet Palace:ä½›å½±-Holy Shadow:çº¢æ¥¼-Sacred Altar:ç«¹æ—å²˜-Bamboo Grove Hill");
 	Pick("","pay_gld","pay_gld","pay_gld","pay_gld","pay_gld");
 C4: setarray @c[2],134,65,240,128,153,137,111,240,208,240;
-	Disp("¿ËÁÖÏ£ÌØ-Kriemhild:Ë¹°ãÏ£ÌØ-Swanhild:À­×ÈÁ¢¿ËË¹-Fadhgridh:Ë¾¿û¹Å-Skoegul:¹ØµÂ-Gondul");
+	Disp("å…‹æ—å¸Œç‰¹-Kriemhild:æ–¯èˆ¬å¸Œç‰¹-Swanhild:æ‹‰å…¹ç«‹å…‹æ–¯-Fadhgridh:å¸è‘µå¤-Skoegul:å…³å¾·-Gondul");
 	Pick("","prt_gld","prt_gld","prt_gld","prt_gld","prt_gld");
 C5: setarray @c[2],158,272,83,47,68,155,299,345,292,107;
-	Disp("ÂíÀÕ¶Å-Mardol:Ï£ÀÖ-Cyr:»ôÂ×-Horn:¼ª±¾-Gefn:°ÍÄÃµÏË¹-Banadis");
+	Disp("é©¬å‹’æœ-Mardol:å¸Œä¹-Cyr:éœä¼¦-Horn:å‰æœ¬-Gefn:å·´æ‹¿è¿ªæ–¯-Banadis");
 	Pick("","aru_gld","aru_gld","aru_gld","aru_gld","aru_gld");
 C6: setarray @c[2],293,100,288,252,97,196,137,90,71,315;
-	Disp("Ï²Ãñ-Himinn:°²µÃÀÉ¿Ë-Andlangr:±ÏµÃ²¼À³Òò-Viblainn:ºÎÁÏµÂ-Hljod:Ë¼¿­ÌáÀÖÄá-Skidbladnir");
+	Disp("å–œæ°‘-Himinn:å®‰å¾—éƒå…‹-Andlangr:æ¯•å¾—å¸ƒè±å› -Viblainn:ä½•æ–™å¾·-Hljod:æ€å‡¯æä¹å°¼-Skidbladnir");
 	Pick("","sch_gld","sch_gld","sch_gld","sch_gld","sch_gld");
 
 // --------------------------------------------------
 	Guild_Dungeons:
 // --------------------------------------------------
-menu	"ÇàÁÖºş²´-Baldur",G1, "Â¶ÒÀÄÉ-Luina",G2, "°Í»ùÁ¦À×¶÷-Valkyrie",G3, "²¼Á¨Í×ÀûÑÇ-Britoniah",G4,
-    	"·¢·ÆÒÀÑÅ-Arunafeltz",G5, "ÄáËü¶Ñ-Schwaltzvalt",G6;
+menu	"é’æ—æ¹–æ³Š-Baldur",G1, "éœ²ä¾çº³-Luina",G2, "å·´åŸºåŠ›é›·æ©-Valkyrie",G3, "å¸ƒå“©å¦¥åˆ©äºš-Britoniah",G4,
+    	"å‘è²ä¾é›…-Arunafeltz",G5, "å°¼å®ƒå †-Schwaltzvalt",G6;
 
 G1: setarray @c[2],119,93,119,93,120,130;
-	Disp("¹«»áµØÏÂÃÜÑ¨ F1-Baldur F1:¹«»áµØÏÂÃÜÑ¨ F2-Baldur F2:ÉîÔ¨»ØÀÈ Ì«¹ÅÖ®·ç-Hall of Abyss");
+	Disp("å…¬ä¼šåœ°ä¸‹å¯†ç©´ F1-Baldur F1:å…¬ä¼šåœ°ä¸‹å¯†ç©´ F2-Baldur F2:æ·±æ¸Šå›å»Š å¤ªå¤ä¹‹é£-Hall of Abyss");
 	Pick("","gld_dun01","gld_dun01_2","gld2_pay");
 G2: setarray @c[2],39,161,39,161,147,155;
-	Disp("¹«»áµØÏÂÃÜÑ¨ F1-Luina F1:¹«»áµØÏÂÃÜÑ¨ F2-Luina F2:ÉîÔ¨»ØÀÈ Ó¢ĞÛÖ®Àá-Hall of Abyss");
+	Disp("å…¬ä¼šåœ°ä¸‹å¯†ç©´ F1-Luina F1:å…¬ä¼šåœ°ä¸‹å¯†ç©´ F2-Luina F2:æ·±æ¸Šå›å»Š è‹±é›„ä¹‹æ³ª-Hall of Abyss");
 	Pick("","gld_dun02","gld_dun02_2","gld2_ald");
 G3: setarray @c[2],50,44,50,44,140,132;
-	Disp("¹«»áµØÏÂÃÜÑ¨ F1-Valkyrie F1:¹«»áµØÏÂÃÜÑ¨ F2-Valkyrie F2:ÉîÔ¨»ØÀÈ Õ½Ê¿Ö®Â·-Hall of Abyss");
+	Disp("å…¬ä¼šåœ°ä¸‹å¯†ç©´ F1-Valkyrie F1:å…¬ä¼šåœ°ä¸‹å¯†ç©´ F2-Valkyrie F2:æ·±æ¸Šå›å»Š æˆ˜å£«ä¹‹è·¯-Hall of Abyss");
 	Pick("","gld_dun03","gld_dun03_2","gld2_prt");
 G4: setarray @c[2],116,45,116,45,152,118;
-	Disp("¹«»áµØÏÂÃÜÑ¨ F1-Britoniah F1:¹«»áµØÏÂÃÜÑ¨ F2-Britoniah F2:ÉîÔ¨»ØÀÈ ÍõÕßÖ®Çğ-Hall of Abyss");
+	Disp("å…¬ä¼šåœ°ä¸‹å¯†ç©´ F1-Britoniah F1:å…¬ä¼šåœ°ä¸‹å¯†ç©´ F2-Britoniah F2:æ·±æ¸Šå›å»Š ç‹è€…ä¹‹ä¸˜-Hall of Abyss");
 	Pick("","gld_dun04","gld_dun04_2","gld2_gef");
 G5: Go("arug_dun01",199,195);
 G6: Go("schg_dun01",200,124);
@@ -438,10 +438,10 @@ G6: Go("schg_dun01",200,124);
 // --------------------------------------------------
 	Instances:
 // --------------------------------------------------
-menu	"Ê³ÔÂ±©Áúºş-Bakonawa Lake",I1, "Ø¬ÃÎÒ½Ôº 2F-Bangungot Hospital 2F",I2, "±¦Ïä¾Şöù ¶´Ñ¨-Buwaya Cave",I3,
-    	"ÎŞ¾¡Ö®Ëş-Endless Tower",I4, "ÃÔÎíÉ­ÁÖ-Hazy Forest",I5, "ÃàÃàµº º£µ×¶´Ñ¨-Malangdo Culvert",I6, "ÄáµÂ»ô¸ñµÄ³²Ñ¨-Nidhoggur's Nest",I7,
-    	"ÕÂÓã¶´Ñ¨-Octopus Cave",I8, "¾É¿ËÀ×Ë¹ÌØººÄ·¹Å³Ç-Old Glast Heim",I9, "ÊŞÈËµÄ»ØÒä-Orc's Memory",I10, "·âÓ¡Éñµî-Sealed Shrin",I11,
-    	"ÀÇÆïÊ¿µÄÊµÑéÊÒ-Wolfchev's Laboratory",I12;
+menu	"é£Ÿæœˆæš´é¾™æ¹–-Bakonawa Lake",I1, "å™©æ¢¦åŒ»é™¢ 2F-Bangungot Hospital 2F",I2, "å®ç®±å·¨é³„ æ´ç©´-Buwaya Cave",I3,
+    	"æ— å°½ä¹‹å¡”-Endless Tower",I4, "è¿·é›¾æ£®æ—-Hazy Forest",I5, "ç»µç»µå²› æµ·åº•æ´ç©´-Malangdo Culvert",I6, "å°¼å¾·éœæ ¼çš„å·¢ç©´-Nidhoggur's Nest",I7,
+    	"ç« é±¼æ´ç©´-Octopus Cave",I8, "æ—§å…‹é›·æ–¯ç‰¹æ±‰å§†å¤åŸ-Old Glast Heim",I9, "å…½äººçš„å›å¿†-Orc's Memory",I10, "å°å°ç¥æ®¿-Sealed Shrin",I11,
+    	"ç‹¼éª‘å£«çš„å®éªŒå®¤-Wolfchev's Laboratory",I12;
 
 I1: Restrict("RE");
 	Go("ma_scene01",172,175);
@@ -467,8 +467,8 @@ I12: Restrict("RE");
 // --------------------------------------------------
 	Special:
 // --------------------------------------------------
-menu	"¾«Á¶·¿-Auction Hall",S1, "Õ½³¡-Battlegrounds",S2, "¶Ä³¡-Casino",S3, "ÀÖÔ°ÍÅ×Ü²¿-Eden Group Headquarters",S4,
-    	"À¥ÂØÕ½¶·³¡-Gonryun Arena",S5, "ÒÀË¹Â³µÃÕ½¶·³¡-Izlude Arena",S6, "Ä§ÎïÈüÅÜ¾ºÈü³¡-Monster Race Arena",S7, "¾ºËÙ³¡-Turbo Track",S8;
+menu	"ç²¾ç‚¼æˆ¿-Auction Hall",S1, "æˆ˜åœº-Battlegrounds",S2, "èµŒåœº-Casino",S3, "ä¹å›­å›¢æ€»éƒ¨-Eden Group Headquarters",S4,
+    	"æ˜†ä»‘æˆ˜æ–—åœº-Gonryun Arena",S5, "ä¾æ–¯é²å¾—æˆ˜æ–—åœº-Izlude Arena",S6, "é­”ç‰©èµ›è·‘ç«èµ›åœº-Monster Race Arena",S7, "ç«é€Ÿåœº-Turbo Track",S8;
 
 S1: Go("auction_01",22,68);
 S2: Go("bat_room",154,150);
@@ -495,58 +495,58 @@ S8: Go("turbo_room",99,114);
 	//[2][0][6]
 	//[3][4][5]
 // --------------------------------------------------
-alb2trea,57,70,6	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#tre	435
-alberta,114,65,5	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#alb	435
-alberta,187,146,5	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#alb2	435
-aldebaran,145,118,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#alde	435
-amatsu,102,152,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#ama	435
-amatsu,202,81,8	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#ama2	435
-ayothaya,209,169,6	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#ayo	435
-ayothaya,143,111,6	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#ayo2	435
-comodo,194,158,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#com	435
-einbech,188,123,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#einbe	435
-einbech,67,102,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#einbe2	435
-einbroch,69,202,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#einbr	435
-gef_fild10,71,339,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#orc	435
-geffen,122,59,8	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#gef	435
-glast_01,372,308,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#glh	435
-gonryun,162,122,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#gon	435
-hugel,101,151,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#hug	435
-izlu2dun,110,92,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#izd	435
-izlude,132,114,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#izl	435	//Pre-RE: (132,120)
-jawaii,253,138,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#jaw	435
-lighthalzen,162,102,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#lhz	435
-louyang,208,103,6	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#lou	435
-manuk,274,146,6	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#man	435
-mid_camp,216,288,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#mid	435
-mjolnir_02,85,364,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#mjo	435
-moc_ruins,64,164,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#moc	435
-morocc,159,97,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#mor	435
-moscovia,229,191,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#mos	435
-nameless_n,259,213,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#nam	435
-niflheim,205,179,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#nif	435
-pay_arche,42,134,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#arc	435
-payon,182,108,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#pay	435
-payon,168,229,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#pay2	435
-prontera,159,193,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#prt	435
-prt_fild05,279,223,6	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#cul	435
-rachel,135,116,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#rac	435
-splendide,205,153,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#spl	435
-thor_camp,249,76,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#thor	435
-umbala,106,150,3	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#umb	435
-umbala,85,163,3	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#umb2	435
-veins,214,123,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#ve	435
-xmas,150,136,6	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#xmas	435
-yuno,162,47,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#yuno	435
+alb2trea,57,70,6	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#tre	435
+alberta,114,65,5	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#alb	435
+alberta,187,146,5	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#alb2	435
+aldebaran,145,118,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#alde	435
+amatsu,102,152,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#ama	435
+amatsu,202,81,8	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#ama2	435
+ayothaya,209,169,6	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#ayo	435
+ayothaya,143,111,6	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#ayo2	435
+comodo,194,158,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#com	435
+einbech,188,123,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#einbe	435
+einbech,67,102,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#einbe2	435
+einbroch,69,202,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#einbr	435
+gef_fild10,71,339,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#orc	435
+geffen,122,59,8	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#gef	435
+glast_01,372,308,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#glh	435
+gonryun,162,122,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#gon	435
+hugel,101,151,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#hug	435
+izlu2dun,110,92,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#izd	435
+izlude,132,114,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#izl	435	//Pre-RE: (132,120)
+jawaii,253,138,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#jaw	435
+lighthalzen,162,102,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#lhz	435
+louyang,208,103,6	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#lou	435
+manuk,274,146,6	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#man	435
+mid_camp,216,288,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#mid	435
+mjolnir_02,85,364,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#mjo	435
+moc_ruins,64,164,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#moc	435
+morocc,159,97,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#mor	435
+moscovia,229,191,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#mos	435
+nameless_n,259,213,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#nam	435
+niflheim,205,179,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#nif	435
+pay_arche,42,134,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#arc	435
+payon,182,108,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#pay	435
+payon,168,229,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#pay2	435
+prontera,159,193,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#prt	435
+prt_fild05,279,223,6	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#cul	435
+rachel,135,116,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#rac	435
+splendide,205,153,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#spl	435
+thor_camp,249,76,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#thor	435
+umbala,106,150,3	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#umb	435
+umbala,85,163,3	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#umb2	435
+veins,214,123,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#ve	435
+xmas,150,136,6	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#xmas	435
+yuno,162,47,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#yuno	435
 
 // --------------------------------------------------
 //	Duplicates (Renewal):
 // --------------------------------------------------
-brasilis,201,222,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#bra	435
-dewata,204,186,6	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#dew	435
-dicastes01,194,194,6	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#dic	435
-ecl_in01,51,60,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#ecl	435
-malangdo,165,139,5	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#mal	435
-malaya,231,204,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#ma	435
-mora,57,152,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#mora	435
-eclage,107,36,4	duplicate(Warper)	ÏÉÅ®´«ËÍ·şÎñ_Teleporter#ecla	435
+brasilis,201,222,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#bra	435
+dewata,204,186,6	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#dew	435
+dicastes01,194,194,6	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#dic	435
+ecl_in01,51,60,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#ecl	435
+malangdo,165,139,5	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#mal	435
+malaya,231,204,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#ma	435
+mora,57,152,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#mora	435
+eclage,107,36,4	duplicate(Warper)	ä»™å¥³ä¼ é€æœåŠ¡_Teleporter#ecla	435
